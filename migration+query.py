@@ -58,9 +58,10 @@ def fill():
 def answer():
     with conn.cursor() as cursor:
         cursor.execute(answer_query)
+        return cursor.fetchall()
 
 
 if __name__ == '__main__':
     create()
     fill()
-    answer()
+    print(answer())
